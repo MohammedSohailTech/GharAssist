@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- ++++++++++++++++++++++SIDEbar++++++++++++++++++++++++++ -->
+        <aside class="sidebar">
+
+            <div class="side-logo-container">
+                <img src="/assets/GA-logo.png">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="side-li">
+                <li class="side-a"><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li class="side-a"><a href="#"><i class="fa-solid fa-calendar-check"></i> Bookings</a></li>
+                <li class="side-a"><a href="#"><i class="fa-solid fa-user"></i> Customers</a></li>
+                <li class="side-a"><a href="#"><i class="fa-solid fa-user-gear"></i> Service Providers</a></li>
+                <li class="side-a"><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li class="side-a"><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+            </hr>
+            <!-- <ul>
+            <li>Logout</li>
+        </ul> -->
+
+
+
+        </aside>
+
+
+        <!-- ++++++++++++++++++++++++++++maincontent+++++++++++++++++++++++++++++++++ -->
+        <main class="main-content">
+
+            <header>
+                <div class="header-container">
+                    <div class="dash-left">
+                        <i class="fa-solid fa-bars"></i>
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div class="dash-right">
+                        <div class="notification"><i class="fa-solid fa-bell"></i>
+                        </div>
+                        <div class="profile">
+                            <i class="fa-solid fa-user-circle"></i>
+                            <span>Admin</span>
+                            <i class="fa-solid fa-chevron-down down"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+            <div class="hero-container">
+                <div class="left-hero-text">
+                    <h1>Welcome Back, Admin!</h1>
+                    <p>Here's What's Happening With Your Business Today.</p>
+                </div>
+                <div class="right-hero-calender">
+                    <i class="fa-regular fa-calendar"></i>
+                    <p id="current-date"></p>
+                </div>
+
+            </div>
+            <!-- ++++++++++++++++++++++++++++++++++++++++++++cards++++++++++++++++++++++++++++++++++++++++++++++++             -->
+            <div class="hero-card-container">
+                <div class="hero-card">
+                    <div class="card-content-first user1">
+                        <i class="fa-solid fa-users"></i>
+                        <div class="card-total blue">
+                            <h3>Total Users</h3>
+                            <span>14</span>
+                        </div>
+                    </div>
+                    <div class="card-content-second user2">
+                        <i class="fa-solid fa-users"></i>
+                        <p>All Registerd Users</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="card-content-first booking1">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <div class="card-total ">
+                            <h3>Total Bookings</h3>
+                            <span>14</span>
+                        </div>
+                    </div>
+                    <div class="card-content-second booking2">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <p>All Time Bookings</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="card-content-first pending1">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                        <div class="card-total ">
+                            <h3>Pending Bookings</h3>
+                            <span>14</span>
+                        </div>
+                    </div>
+                    <div class="card-content-second pending2">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                        <p>Awaiting Action</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="card-content-first completed1">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div class="card-total ">
+                            <h3>Completed Bookings</h3>
+                            <span>14</span>
+                        </div>
+                    </div>
+                    <div class="card-content-second completed2">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p>Successfully Completed</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ++++++++++++++++++++++++++++++++++++++++table++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <div class="hero-table">
+
+            </div>
+            <div class="hero-table-container">
+                <div class="table-container">
+                    <div class="table-title">
+                        <div class="left-table-title">
+                            <i class="fa-solid fa-calendar"></i>
+                            <h2>Reacent Bookings</h2>
+                        </div>
+                        <div class="right-table-title">
+                            <a href="#">View All Bookings</a>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customers</th>
+                                    <th>Service</th>
+                                    <th>Date & Time</th>
+                                    <th>Providers</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="customer-t">
+                                        <div class="customer-details">
+                                            <div class="customer-logo"><i class="fa-solid fa-user custmr"></i></div>
+                                            <div class="customer-nn">
+                                                <span>Sohail</span>
+                                                <span>8123707103</span>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="service-t">
+                                            <i class="fa-solid fa-snowflake" id="ac"></i><span>AC Repair</span>
+                                        </div>
+                                    </td>
+                                    <td class="d&t">
+                                        <p></p>
+                                    </td>
+                                    <td class="">
+                                        <div class="service-provider-prof"><img
+                                                src="/assets/HERO.png"><span>SOHAIL</span></div>
+                                    </td>
+                                    <td class="">
+                                        <div class="status">
+                                            <i class="fa-solid fa-clock"></i><span>Pending</span>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="action">
+                                            <button><i class="fa-solid fa-eye " id="view"></i></button>
+                                            <button><i class="fa-solid fa-trash " id="delete"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="customer-t">
+                                        <div class="customer-details">
+                                            <div class="customer-logo"><i class="fa-solid fa-user custmr"></i></div>
+                                            <div class="customer-nn">
+                                                <span>Sohail</span>
+                                                <span>8123707103</span>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="service-t">
+                                            <i class="fa-solid fa-faucet-drip" id="plumbing"></i><span>Plumbing
+                                                Repair</span>
+                                        </div>
+                                    </td>
+                                    <td class="d&t">
+                                        <p></p>
+                                    </td>
+                                    <td class="">
+                                        <div class="service-provider-prof"><img
+                                                src="/assets/HERO.png"><span>SOHAIL</span></div>
+                                    </td>
+                                    <td class="">
+                                        <div class="status">
+                                            <i class="fa-solid fa-circle-check" id="Complted"></i><span>Completed</span>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="action">
+                                            <button><i class="fa-solid fa-eye " id="view"></i></button>
+                                            <button><i class="fa-solid fa-trash " id="delete"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="customer-t">
+                                        <div class="customer-details">
+                                            <div class="customer-logo"><i class="fa-solid fa-user custmr"></i></div>
+                                            <div class="customer-nn">
+                                                <span>Sohail</span>
+                                                <span>8123707103</span>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="service-t">
+                                            <i class="fa-solid fa-bolt" id="electric"></i><span>Electrical Repair</span>
+                                        </div>
+                                    </td>
+                                    <td class="d&t">
+                                        <p></p>
+                                    </td>
+                                    <td class="">
+                                        <div class="service-provider-prof"><img
+                                                src="/assets/HERO.png"><span>SOHAIL</span></div>
+                                    </td>
+                                    <td class="">
+                                        <div class="status">
+                                            <i class="fa-solid fa-xmark" id="rejected"></i><span>Rejected</span>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="action">
+                                            <button><i class="fa-solid fa-eye " id="view"></i></button>
+                                            <button><i class="fa-solid fa-trash " id="delete"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="customer-t">
+                                        <div class="customer-details">
+                                            <div class="customer-logo"><i class="fa-solid fa-user custmr"></i></div>
+                                            <div class="customer-nn">
+                                                <span>Sohail</span>
+                                                <span>8123707103</span>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="service-t">
+                                            <i class="fa-solid fa-broom" id="cleaning"></i><span>Cleaning Repair</span>
+                                        </div>
+                                    </td>
+                                    <td class="d&t">
+                                        <p></p>
+                                    </td>
+                                    <td class="">
+                                        <div class="service-provider-prof"><img
+                                                src="/assets/HERO.png"><span>SOHAIL</span></div>
+                                    </td>
+                                    <td class="">
+                                        <div class="status">
+                                            <i class="fa-solid fa-check" id="accepted"></i><span>Accepted</span>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="action">
+                                            <button><i class="fa-solid fa-eye " id="view"></i></button>
+                                            <button><i class="fa-solid fa-trash " id="delete"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </main>
+
+
+
+
+    </div>
+</body>
+<script src="/js/admin.js"></script>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GharAssist/Booking-Page</title>
+    <link rel="stylesheet" href="/Frontend/css/booking.css">
+    <link rel="stylesheet" href="/Frontend/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.css">
+</head>
+
+<body>
+      <header>
+        <nav>
+            <div class="nav-logo">
+                <img src="/Frontend/assets/GA-logo.png" class="logo-svg" alt="GharAssist-logo">
+            </div>
+            <div class="nav-link ">
+                <ul class="nav-link-items side-nav">
+                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/Frontend/html/home.html">Home</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a href="/Frontend/html/services.html">Services
+                        </a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/Frontend/html/about.html">About</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/Frontend/html/how.html">How It Works</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a href="/Frontend/html/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="/Frontend/html/login.html" class="login-btn">Login</a>
+                <a href="/Frontend/html/booking.html" class="book-btn">Book Now</a>
+            </div>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars" id="hamburger"></i>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="left-hero">
+                    <div class="hero-text">
+                        <p id="booking-para">BOOK A SERVICE</p>
+                        <h1 id="hero-title">Fill Details & Book <br>Your Service <h1>
+                                <p id="hero-para">We'll connect you with the best experts.
+                                </p>
+                    </div>
+                </div>
+                <div class="right-hero">
+                    <div class="yellow-half"></div>
+                    <div class="dot-pattern"></div>
+                    <img src="/Frontend/assets/booking hero-1.png">
+                </div>
+            </div>
+        </section>
+        <section class="booking-hero">
+            <div class="hero-booking-form-container">
+                <div class="booking-form-heading">
+                    <h1>Book Your Service</h1>
+                    <p>Fill the datails below and we'll contact you shortly</p>
+                </div>
+                <form class="hero-booking-form"  action="/#" name="booking-form" onsubmit="return validateBooking" method="post">
+                    <div class="hbf-label form-group">
+                        <label id="hbf-label-1">Select Service</label>
+                        <select name="services" id="select-service" >
+                            <option value=""> --- Select service --- </option>
+                            <option value="AC Service">AC Service</option>
+                            <option value="Plumbing Service">Plumbing Service</option>
+                            <option value="Electrical Service">Electrical Service</option>
+                            <option value="cleaning Service">Cleaning Service</option>
+                            <option value="Appliance Service">Appliance Reapair</option>
+                            <option value="Pest control">Pest Control</option>
+                            <option value="Furniture Service">Furniture Service</option>
+                            <option value="Painting Service">Painting Service</option>
+                        </select>
+                        <P id="select-error"></P>
+                    </div>
+                    <div class="fn form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter your full name" id="name-input" >
+                        <p id="name-error"></p>
+
+                    </div>
+                    <div class="fn form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="Enter your phone number" id="phone-input">
+                        <p id="number-error"></p>
+                    </div>
+
+                    <div class="fn form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Enter your email" id="email-inpt">
+                        <p id="email-error"></p>
+                    </div>
+                    <div class="fn form-group">
+                        <label>Location</label>
+                        <input type="text" placeholder="Enter your location" id="location-input" >
+                        <p id="location-error"></p>
+                    </div>
+                    <div class="fn form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" id="date-input">
+                        <p id="date-error"></p>
+                    </div>
+                    <div class="fn form-group full-width">
+                        <label>Additional Notes (Optional)</label>
+                        <textarea name="Message" placeholder="write any additional notes" ></textarea>
+
+                </form>
+                <button>Book Now <span>&rarr;</span></button>
+
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++footer++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+     <footer>
+        <div class="footer-section">
+            <div class="footer-items fl">
+                <div class="footer-logo">
+                    <img src="/Frontend/assets/GA-logo.png" alt="GharAssist-logo" id="footer-logo">
+                </div>
+                <div class="footer-logo-para">
+                    <h4>Trusted Home Services,<br> Anytime, Anywhere</h4>
+                </div>
+                <div class="footer-logo-sm-icon">
+                    <div class="footer-sm-icon-box">
+                        <a href="https://www.facebook.com/profile.php?id=61589088454035" target="_blank"> <img
+                                src="/Frontend/assets/facebook-square-icon.svg" alt="/facebook"></a>
+                        <a href="https://www.instagram.com/gharassist?igsh=MTN3dnhwaWNuNjJmcw==" target="_blank"> <img
+                                src="/Frontend/assets/ig-instagram-icon.svg" alt="instagram"></a>
+                        <a href="https://x.com/GharAssist_AG" target="_blank"> <img src="/Frontend/assets/x-svg.svg" alt="x "></a>
+                        <a href="https://www.youtube.com/@GharAssist" target="_blank"><img
+                                src="/Frontend/assets/youtube-color-icon.svg" alt="youtube"></a>
+                        <a href="https://wa.me/918722284784" target="_blank"><img src="/Frontend/assets/wa-whatsapp-icon.svg"
+                                alt="WhatsApp"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-items">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="/Frontend/html/home.html">Home</a></li>
+                    <li><a href="/Frontend/html/services.html">Services</a></li>
+                    <li><a href="/Frontend/html/about.html">About Us</a></li>
+                    <li><a href="/Frontend/html/how.html">How It Works</a></li>
+                    <li><a href="/Frontend/html/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-items">
+                <h2>Services</h2>
+                <ul>
+                    <li><a>AC Services</a></li>
+                    <li><a>Plumbing Services</a></li>
+                    <li><a>Electrical Services</a></li>
+                    <li><a>Cleaning Servicess</a></li>
+                    <!-- <li><a>AC Services</a></li> -->
+                </ul>
+            </div>
+            <div class="footer-items">
+                <h2>Support</h2>
+                <ul>
+                    <li><a>Help Centre</a></li>
+                    <li><a>FAQs</a></li>
+                    <li><a>Terms & Conditions</a></li>
+                    <li><a>Privacy Policy</a></li>
+                    <!-- <li><a>Contact Us</a></li> -->
+                </ul>
+            </div>
+            <div class="footer-items contacts">
+                <h2>Contact Us</h2>
+                <div class="footer-contact">
+                    <a href="tel:+91 8722284784"> <img src="/Frontend/assets/phone-call-white-icon.svg" alt="call" </a>
+                        <a href="tel:+91 8722284784">+91 8722284784</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:support.gharassist@gmail.com" target="_blank"><img src="/Frontend/assets/email-svg.svg"
+                            class="footer-email" alt="email" </a>
+                        <a href="mailto:support.gharassist@gmail.com" class="footer-email" target="_blank">
+                            support.gharassist@gmail.com
+                        </a>
+                </div>
+                <div class="footer-contact">
+                    <a href="https://maps.app.goo.gl/dmeJja5q6bEQUBo99" target="_blank"> <img
+                            src="/Frontend/assets/location-pointer-white-icon.svg" alt="location" </a>
+                        <a href="https://maps.app.goo.gl/dmeJja5q6bEQUBo99" target="_blank"> Kalaburgi,
+                            Karnataka </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <hr>
+            <p> &copy 2026 GharAssist. All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+<script src="/Frontend/js/booking.js"></script>
+
+</html>
