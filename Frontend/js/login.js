@@ -13,7 +13,7 @@ loginForm.addEventListener('submit', async function (e) {
     const password = document.querySelector('#login-pswd').value
     // console.log("Email sent:", emailPhone)
     // console.log("Password sent:", password)
-    const response = await fetchfetch('https://gharassist.onrender.com/api/users/login', {
+    const response = await fetch('https://gharassist.onrender.com/api/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
