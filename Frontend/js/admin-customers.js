@@ -30,7 +30,7 @@ const fetchCustomers = async () => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            "http://localhost:3000/api/users/all",
+            "https://gharassist.onrender.com/api/users/all",
             {
                 method: "GET",
                 headers: {
@@ -125,7 +125,7 @@ async function viewCustomer(id) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/users/${id}`,
+            `https://gharassist.onrender.com/api/users/${id}`,
             {
                 method: "GET",
                 headers: {
@@ -216,7 +216,7 @@ async function deleteCustomer(id) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/users/${id}`,
+            `https://gharassist.onrender.com/api/users/${id}`,
             {
                 method: "DELETE",
                 headers: {

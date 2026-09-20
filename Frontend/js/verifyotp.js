@@ -35,7 +35,7 @@ if (otpForm) {
 
         try {
             const response = await fetch(
-                "http://localhost:3000/api/users/verify-otp",
+                "https://gharassist.onrender.com/api/users/verify-otp",
                 {
                     method: "POST",
                     headers: {
@@ -158,7 +158,7 @@ if (resendOtp) {
             resendOtp.style.opacity = "0.5";
 
             const response = await fetch(
-                "http://localhost:3000/api/users/resend-otp",
+                "https://gharassist.onrender.com/api/users/resend-otp",
                 {
                     method: "POST",
                     headers: {

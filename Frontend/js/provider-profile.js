@@ -17,7 +17,7 @@ const getProviderProfile = async () => {
         }
 
         const response = await fetch(
-            "http://localhost:3000/api/users/profile",
+            "https://gharassist.onrender.com/api/users/profile",
             {
                 method: "GET",
 

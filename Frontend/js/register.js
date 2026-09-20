@@ -20,7 +20,7 @@ myForm.addEventListener('submit', async function (e) {
 
     try {
 
-        const response = await fetch("http://localhost:3000/api/users/register", {
+        const response = await fetch("https://gharassist.onrender.com/api/users/register", {
 
             method: "POST",
 

@@ -14,7 +14,7 @@ const fetchContacts = async () => {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch("http://localhost:3000/api/contacts/", {
+        const response = await fetch("https://gharassist.onrender.com/api/contacts/", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -61,7 +61,7 @@ async function viewContact(id) {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`http://localhost:3000/api/contacts/${id}`, {
+        const response = await fetch(`https://gharassist.onrender.com/api/contacts/${id}`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -104,7 +104,7 @@ async function deleteContact(id) {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`http://localhost:3000/api/contacts/${id}`, {
+        const response = await fetch(`https://gharassist.onrender.com/api/contacts/${id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -131,7 +131,7 @@ const fetchProviders = async () => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            "http://localhost:3000/api/users/providers",
+            "https://gharassist.onrender.com/api/users/providers",
             {
                 method: "GET",
                 headers: {
@@ -160,7 +160,7 @@ const fetchBookings = async () => {
         await fetchProviders();
         const token = localStorage.getItem("token");
 
-        const response = await fetch("http://localhost:3000/api/bookings/all", {
+        const response = await fetch("https://gharassist.onrender.com/api/bookings/all", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -268,13 +268,13 @@ const fetchBookings = async () => {
 async function viewBooking(id) {
     // console.log("VIEW BOOKING CLICKED:", id);
     // console.log("BOOKING ID:", id);
-    // console.log("URL:", `http://localhost:3000/api/bookings/${id}`);
+    // console.log("URL:", `https://gharassist.onrender.com/api/bookings/${id}`);
     try {
 
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/${id}`,
+            `https://gharassist.onrender.com/api/bookings/${id}`,
             {
                 method: "GET",
                 headers: {
@@ -335,7 +335,7 @@ async function deleteBookingById(id) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/${id}`,
+            `https://gharassist.onrender.com/api/bookings/${id}`,
             {
                 method: "DELETE",
                 headers: {
@@ -370,7 +370,7 @@ async function assignProvider(bookingId, providerId) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/assign-provider/${bookingId}`,
+            `https://gharassist.onrender.com/api/bookings/assign-provider/${bookingId}`,
             {
                 method: "PATCH",
                 headers: {
@@ -409,7 +409,7 @@ const fetchUsers = async () => {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch("http://localhost:3000/api/users/all", {
+        const response = await fetch("https://gharassist.onrender.com/api/users/all", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -433,7 +433,7 @@ async function updateBookingStatus(id, status) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/status/${id}`,
+            `https://gharassist.onrender.com/api/bookings/status/${id}`,
             {
                 method: "PATCH",
                 headers: {

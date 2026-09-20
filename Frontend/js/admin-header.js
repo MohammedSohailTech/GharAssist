@@ -103,19 +103,19 @@ const updateNotificationCount = async () => {
         const [bookingsResponse, contactsResponse, usersResponse] =
             await Promise.all([
 
-                fetch("http://localhost:3000/api/bookings/all", {
+                fetch("https://gharassist.onrender.com/api/bookings/all", {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }
                 }),
 
-                fetch("http://localhost:3000/api/contacts/", {
+                fetch("https://gharassist.onrender.com/api/contacts/", {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }
                 }),
 
-                fetch("http://localhost:3000/api/users/all", {
+                fetch("https://gharassist.onrender.com/api/users/all", {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }

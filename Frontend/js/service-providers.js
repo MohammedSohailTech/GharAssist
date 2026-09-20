@@ -25,7 +25,7 @@ const fetchProviders = async () => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            "http://localhost:3000/api/users/providers",
+            "https://gharassist.onrender.com/api/users/providers",
             {
                 method: "GET",
 
@@ -132,7 +132,7 @@ async function viewProvider(id) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/users/${id}`,
+            `https://gharassist.onrender.com/api/users/${id}`,
             {
                 method: "GET",
 
@@ -251,7 +251,7 @@ async function deleteProvider(id) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/users/${id}`,
+            `https://gharassist.onrender.com/api/users/${id}`,
             {
                 method: "DELETE",
 

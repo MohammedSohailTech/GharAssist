@@ -35,7 +35,7 @@ const fetchProviders = async () => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            "http://localhost:3000/api/users/providers",
+            "https://gharassist.onrender.com/api/users/providers",
             {
                 method: "GET",
                 headers: {
@@ -70,7 +70,7 @@ const fetchBookings = async () => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            "http://localhost:3000/api/bookings/all",
+            "https://gharassist.onrender.com/api/bookings/all",
             {
                 method: "GET",
                 headers: {
@@ -256,7 +256,7 @@ async function viewBooking(id) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/${id}`,
+            `https://gharassist.onrender.com/api/bookings/${id}`,
             {
                 method: "GET",
                 headers: {
@@ -358,7 +358,7 @@ async function deleteBooking(id) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/${id}`,
+            `https://gharassist.onrender.com/api/bookings/${id}`,
             {
                 method: "DELETE",
                 headers: {
@@ -404,7 +404,7 @@ async function assignProvider(bookingId, providerId) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/assign-provider/${bookingId}`,
+            `https://gharassist.onrender.com/api/bookings/assign-provider/${bookingId}`,
             {
                 method: "PATCH",
 
@@ -458,7 +458,7 @@ async function updateBookingStatus(id, status) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/status/${id}`,
+            `https://gharassist.onrender.com/api/bookings/status/${id}`,
             {
                 method: "PATCH",
 

@@ -43,7 +43,7 @@ if (resetForm) {
 
         try {
             const response = await fetch(
-                "http://localhost:3000/api/users/reset-password",
+                "https://gharassist.onrender.com/api/users/reset-password",
                 {
                     method: "PATCH",
                     headers: {

@@ -25,7 +25,7 @@ if (forgotForm) {
 
         try {
             const response = await fetch(
-                "http://localhost:3000/api/users/forgot-password",
+                "https://gharassist.onrender.com/api/users/forgot-password",
                 {
                     method: "POST",
                     headers: {

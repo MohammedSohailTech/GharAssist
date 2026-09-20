@@ -14,7 +14,7 @@ const checkProviderAccess = async () => {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/api/users/profile",
+            "https://gharassist.onrender.com/api/users/profile",
             {
                 method: "GET",
                 headers: {
@@ -93,7 +93,7 @@ const getProviderBookings = async () => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            "http://localhost:3000/api/bookings/provider-bookings",
+            "https://gharassist.onrender.com/api/bookings/provider-bookings",
             {
                 method: "GET",
                 headers: {

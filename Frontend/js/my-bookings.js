@@ -18,7 +18,7 @@ const getCustomerBookings = async () => {
         }
 
         const response = await fetch(
-            "http://localhost:3000/api/bookings/my-bookings",
+            "https://gharassist.onrender.com/api/bookings/my-bookings",
             {
                 method: "GET",
                 headers: {

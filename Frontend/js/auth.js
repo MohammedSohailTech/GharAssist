@@ -8,7 +8,7 @@ const checkAdmin = async () => {
 
     try {
 
-        const response = await fetch("http://localhost:3000/api/users/profile", {
+        const response = await fetch("https://gharassist.onrender.com/api/users/profile", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`

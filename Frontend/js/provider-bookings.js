@@ -16,7 +16,7 @@ const getProviderBookings = async () => {
         }
 
         const response = await fetch(
-            "http://localhost:3000/api/bookings/provider-bookings",
+            "https://gharassist.onrender.com/api/bookings/provider-bookings",
             {
                 method: "GET",
                 headers: {
@@ -445,7 +445,7 @@ const updateProviderBookingStatus = async (bookingId, status) => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:3000/api/bookings/provider-status/${bookingId}`,
+            `https://gharassist.onrender.com/api/bookings/provider-status/${bookingId}`,
             {
                 method: "PATCH",
 
