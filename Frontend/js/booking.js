@@ -101,7 +101,7 @@ function validateBooking() {
 
     // _++++++++++++++++++++++++++++++nameError++++++++++++++++++++++++++++
 
-    const namePattern = /^[A-Za-z]+$/
+    const namePattern = /^[A-Za-z]+(?:\s+[A-Za-z]+)*$/;
 
     const nameError = document.getElementById('name-error')
 
