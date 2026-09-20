@@ -1,0 +1,110 @@
+/* Active sidebar link */
+.side-a a.active {
+    color: #f5b400;
+}
+
+
+/* Provider table */
+.hero-table-container .table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.hero-table-container table {
+    min-width: 900px;
+}
+
+.hero-table-container th,
+.hero-table-container td {
+    white-space: nowrap;
+}
+
+
+/* Provider information */
+.provider-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #041c4a;
+    font-weight: 600;
+}
+
+.provider-icon {
+    background: #2563eb;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.provider-icon i {
+    color: #fff;
+}
+
+
+/* Action buttons */
+.provider-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.provider-action button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.provider-view {
+    color: darkblue;
+}
+
+.provider-delete {
+    color: red;
+}
+
+
+/* Refresh button */
+.right-hero-calender button {
+    border: none;
+    background: #f5b400;
+    color: #041c4a;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.right-hero-calender button:hover {
+    opacity: 0.9;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .hero-table-container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .right-hero-calender {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* Small mobile */
+@media (max-width: 668px) {
+
+    .hero-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .right-hero-calender {
+        justify-content: flex-start;
+        padding: 10px 0;
+    }
+
+}

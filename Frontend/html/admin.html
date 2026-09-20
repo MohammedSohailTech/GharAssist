@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/bookings.css">
 </head>
 
 <body>
@@ -19,20 +20,52 @@
                 <img src="/assets/GA-logo.png">
                 <h2>Admin Panel</h2>
             </div>
+
             <ul class="side-li">
-                <li class="side-a"><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                <li class="side-a"><a href="#"><i class="fa-solid fa-calendar-check"></i> Bookings</a></li>
-                <li class="side-a"><a href="#"><i class="fa-solid fa-user"></i> Customers</a></li>
-                <li class="side-a"><a href="#"><i class="fa-solid fa-user-gear"></i> Service Providers</a></li>
-                <li class="side-a"><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
-                <li class="side-a"><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+                <li class="side-a">
+                    <a href="/html/admin.html" class="active">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="side-a">
+                    <a href="/html/bookings.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Bookings
+                    </a>
+                </li>
+
+                <li class="side-a">
+                    <a href="/html/admin-customers.html">
+                        <i class="fa-solid fa-user"></i>
+                        Customers
+                    </a>
+                </li>
+
+                <li class="side-a">
+                    <a href="/html/service-providers.html">
+                        <i class="fa-solid fa-user-gear"></i>
+                        Service Providers
+                    </a>
+                </li>
+
+                <li class="side-a">
+                    <a href="/html/admin-services.html">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        Services
+                    </a>
+                </li>
+
+                <li class="side-a">
+                    <a href="#" id="logout-button">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
+                </li>
+
             </ul>
-            </hr>
-            <!-- <ul>
-            <li>Logout</li>
-        </ul> -->
-
-
 
         </aside>
 
@@ -43,16 +76,54 @@
             <header>
                 <div class="header-container">
                     <div class="dash-left">
-                        <i class="fa-solid fa-bars"></i>
+                        <i class="fa-solid fa-bars" id="menu-toggle"></i>
                         <h1>Dashboard</h1>
                     </div>
                     <div class="dash-right">
-                        <div class="notification"><i class="fa-solid fa-bell"></i>
+                        <div class="notification" id="notification">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="notification-badge" id="notification-badge">3</span>
                         </div>
-                        <div class="profile">
+                        <div class="notification-dropdown" id="notification-dropdown">
+                            <h3>Notifications</h3>
+
+                            <div class="notification-item">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span>New booking received</span>
+                            </div>
+
+                            <div class="notification-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>New contact message</span>
+                            </div>
+
+                            <div class="notification-item">
+                                <i class="fa-solid fa-user"></i>
+                                <span>New customer registered</span>
+                            </div>
+                        </div>
+                        <div class="profile" id="profile">
+
                             <i class="fa-solid fa-user-circle"></i>
+
                             <span>Admin</span>
+
                             <i class="fa-solid fa-chevron-down down"></i>
+
+                            <div class="profile-dropdown" id="profile-dropdown">
+
+                                <div class="profile-dropdown-item">
+                                    <i class="fa-solid fa-user"></i>
+                                    <a href="/html/admin-profile.html">Admin Profile</a>
+                                </div>
+
+                                <div class="profile-dropdown-item" id="profile-logout-button">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <span>Logout</span>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
 
@@ -66,6 +137,11 @@
                 <div class="right-hero-calender">
                     <i class="fa-regular fa-calendar"></i>
                     <p id="current-date"></p>
+                    <button id="refresh-provider-bookings">
+                        <i class="fa-solid fa-rotate"></i>
+                        Refresh
+
+                    </button>
                 </div>
 
             </div>
@@ -76,7 +152,7 @@
                         <i class="fa-solid fa-users"></i>
                         <div class="card-total blue">
                             <h3>Total Users</h3>
-                            <span>14</span>
+                            <span id="total-users">0</span>
                         </div>
                     </div>
                     <div class="card-content-second user2">
@@ -90,7 +166,7 @@
                         <i class="fa-solid fa-calendar-check"></i>
                         <div class="card-total ">
                             <h3>Total Bookings</h3>
-                            <span>14</span>
+                            <span id="total-bookings">0</span>
                         </div>
                     </div>
                     <div class="card-content-second booking2">
@@ -103,7 +179,7 @@
                         <i class="fa-solid fa-hourglass-half"></i>
                         <div class="card-total ">
                             <h3>Pending Bookings</h3>
-                            <span>14</span>
+                            <span id="pending-bookings">0</span>
                         </div>
                     </div>
                     <div class="card-content-second pending2">
@@ -116,7 +192,7 @@
                         <i class="fa-solid fa-circle-check"></i>
                         <div class="card-total ">
                             <h3>Completed Bookings</h3>
-                            <span>14</span>
+                            <span id="completed-bookings">0</span>
                         </div>
                     </div>
                     <div class="card-content-second completed2">
@@ -137,7 +213,7 @@
                             <h2>Reacent Bookings</h2>
                         </div>
                         <div class="right-table-title">
-                            <a href="#">View All Bookings</a>
+                            <a href="bookings.html">View All Bookings</a>
                         </div>
                     </div>
                     <div class="table">
@@ -153,148 +229,10 @@
                                 </tr>
 
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="customer-t">
-                                        <div class="customer-details">
-                                            <div class="customer-logo"><i class="fa-solid fa-user custmr"></i></div>
-                                            <div class="customer-nn">
-                                                <span>Sohail</span>
-                                                <span>8123707103</span>
-                                            </div>
 
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="service-t">
-                                            <i class="fa-solid fa-snowflake" id="ac"></i><span>AC Repair</span>
-                                        </div>
-                                    </td>
-                                    <td class="d&t">
-                                        <p></p>
-                                    </td>
-                                    <td class="">
-                                        <div class="service-provider-prof"><img
-                                                src="/assets/HERO.png"><span>SOHAIL</span></div>
-                                    </td>
-                                    <td class="">
-                                        <div class="status">
-                                            <i class="fa-solid fa-clock"></i><span>Pending</span>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="action">
-                                            <button><i class="fa-solid fa-eye " id="view"></i></button>
-                                            <button><i class="fa-solid fa-trash " id="delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="customer-t">
-                                        <div class="customer-details">
-                                            <div class="customer-logo"><i class="fa-solid fa-user custmr"></i></div>
-                                            <div class="customer-nn">
-                                                <span>Sohail</span>
-                                                <span>8123707103</span>
-                                            </div>
 
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="service-t">
-                                            <i class="fa-solid fa-faucet-drip" id="plumbing"></i><span>Plumbing
-                                                Repair</span>
-                                        </div>
-                                    </td>
-                                    <td class="d&t">
-                                        <p></p>
-                                    </td>
-                                    <td class="">
-                                        <div class="service-provider-prof"><img
-                                                src="/assets/HERO.png"><span>SOHAIL</span></div>
-                                    </td>
-                                    <td class="">
-                                        <div class="status">
-                                            <i class="fa-solid fa-circle-check" id="Complted"></i><span>Completed</span>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="action">
-                                            <button><i class="fa-solid fa-eye " id="view"></i></button>
-                                            <button><i class="fa-solid fa-trash " id="delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="customer-t">
-                                        <div class="customer-details">
-                                            <div class="customer-logo"><i class="fa-solid fa-user custmr"></i></div>
-                                            <div class="customer-nn">
-                                                <span>Sohail</span>
-                                                <span>8123707103</span>
-                                            </div>
-
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="service-t">
-                                            <i class="fa-solid fa-bolt" id="electric"></i><span>Electrical Repair</span>
-                                        </div>
-                                    </td>
-                                    <td class="d&t">
-                                        <p></p>
-                                    </td>
-                                    <td class="">
-                                        <div class="service-provider-prof"><img
-                                                src="/assets/HERO.png"><span>SOHAIL</span></div>
-                                    </td>
-                                    <td class="">
-                                        <div class="status">
-                                            <i class="fa-solid fa-xmark" id="rejected"></i><span>Rejected</span>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="action">
-                                            <button><i class="fa-solid fa-eye " id="view"></i></button>
-                                            <button><i class="fa-solid fa-trash " id="delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="customer-t">
-                                        <div class="customer-details">
-                                            <div class="customer-logo"><i class="fa-solid fa-user custmr"></i></div>
-                                            <div class="customer-nn">
-                                                <span>Sohail</span>
-                                                <span>8123707103</span>
-                                            </div>
-
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="service-t">
-                                            <i class="fa-solid fa-broom" id="cleaning"></i><span>Cleaning Repair</span>
-                                        </div>
-                                    </td>
-                                    <td class="d&t">
-                                        <p></p>
-                                    </td>
-                                    <td class="">
-                                        <div class="service-provider-prof"><img
-                                                src="/assets/HERO.png"><span>SOHAIL</span></div>
-                                    </td>
-                                    <td class="">
-                                        <div class="status">
-                                            <i class="fa-solid fa-check" id="accepted"></i><span>Accepted</span>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="action">
-                                            <button><i class="fa-solid fa-eye " id="view"></i></button>
-                                            <button><i class="fa-solid fa-trash " id="delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
+                            <tbody id="bookings-table-body">
+                                <!-- Bookings will be added here by JavaScript -->
                             </tbody>
 
 
@@ -304,7 +242,38 @@
 
             </div>
 
+            <!-- CONTACTS TABLE -->
+            <div class="hero-table-container">
+                <div class="table-container">
 
+                    <div class="table-title">
+                        <div class="left-table-title">
+                            <i class="fa-solid fa-envelope"></i>
+                            <h2>Contact Messages</h2>
+                        </div>
+                    </div>
+
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="contacts-table-body">
+                                <!-- Contacts will be added here by JavaScript -->
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
 
         </main>
 
@@ -312,7 +281,56 @@
 
 
     </div>
+    <div id="view-modal" class="view-modal">
+        <div class="view-modal-content">
+
+            <button id="close-modal" class="close-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2>Contact Details</h2>
+
+            <p><strong>Name:</strong> <span id="view-name"></span></p>
+
+            <p><strong>Email:</strong> <span id="view-email"></span></p>
+
+            <p><strong>Phone:</strong> <span id="view-phone"></span></p>
+
+            <p><strong>Message:</strong> <span id="view-message"></span></p>
+
+        </div>
+    </div>
+    <div id="booking-modal" class="view-modal">
+
+        <div class="view-modal-content">
+
+            <button id="close-booking-modal" class="close-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2>Booking Details</h2>
+
+            <p><strong>Customer:</strong> <span id="booking-name"></span></p>
+
+            <p><strong>Phone:</strong> <span id="booking-phone"></span></p>
+
+            <p><strong>Email:</strong> <span id="booking-email"></span></p>
+
+            <p><strong>Service:</strong> <span id="booking-service"></span></p>
+
+            <p><strong>Location:</strong> <span id="booking-location"></span></p>
+
+            <p><strong>Date:</strong> <span id="booking-date"></span></p>
+
+            <p><strong>Status:</strong> <span id="booking-status"></span></p>
+
+        </div>
+
+    </div>
 </body>
+<script src="/js/auth.js"></script>
+<script src="/js/admin-header.js"></script>
+<!-- <script src="/js/bookings.js"></script> -->
 <script src="/js/admin.js"></script>
 
 </html>

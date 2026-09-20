@@ -10,24 +10,37 @@
 </head>
 
 <body>
-      <header>
+    <header>
         <nav>
             <div class="nav-logo">
                 <img src="/assets/GA-logo.png" class="logo-svg" alt="GharAssist-logo">
             </div>
             <div class="nav-link ">
                 <ul class="nav-link-items side-nav">
-                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/html/home.html">Home</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a href="/html/services.html">Services
+                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/html/home.html">Home</a>
+                    </li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a
+                            href="/html/services.html">Services
                         </a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/html/about.html">About</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/html/how.html">How It Works</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a href="/html/contact.html">Contact Us</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/html/about.html">About</a>
+                    </li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/html/how.html">How
+                            It Works</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a
+                            href="/html/contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="nav-btn">
-                <a href="/html/login.html" class="login-btn">Login</a>
-                <a href="/html/booking.html" class="book-btn">Book Now</a>
+            <div class="nav-btn" id="public-nav-buttons">
+                <a href="/html/login.html" class="login-btn" id="nav-login">Login</a>
+                <a href="/html/booking.html" class="book-btn" id="nav-book">Book Now</a>
+
+                <a href="/html/customer.html" class="login-btn" id="nav-dashboard" style="display: none;">
+                    Dashboard
+                </a>
+
+                <a href="/html/my-bookings.html" class="book-btn" id="nav-my-bookings" style="display: none;">
+                    My Bookings
+                </a>
             </div>
             <div class="menu-btn">
                 <i class="fa-solid fa-bars" id="hamburger"></i>
@@ -59,10 +72,11 @@
                     <h1>Book Your Service</h1>
                     <p>Fill the datails below and we'll contact you shortly</p>
                 </div>
-                <form class="hero-booking-form"  action="/#" name="booking-form" onsubmit="return validateBooking" method="post">
+                <form class="hero-booking-form" action="/#" name="booking-form" onsubmit="return validateBooking"
+                    method="post">
                     <div class="hbf-label form-group">
                         <label id="hbf-label-1">Select Service</label>
-                        <select name="services" id="select-service" >
+                        <select name="services" id="select-service">
                             <option value=""> --- Select service --- </option>
                             <option value="AC Service">AC Service</option>
                             <option value="Plumbing Service">Plumbing Service</option>
@@ -77,7 +91,7 @@
                     </div>
                     <div class="fn form-group">
                         <label>Full Name</label>
-                        <input type="text" placeholder="Enter your full name" id="name-input" >
+                        <input type="text" placeholder="Enter your full name" id="name-input">
                         <p id="name-error"></p>
 
                     </div>
@@ -94,7 +108,7 @@
                     </div>
                     <div class="fn form-group">
                         <label>Location</label>
-                        <input type="text" placeholder="Enter your location" id="location-input" >
+                        <input type="text" placeholder="Enter your location" id="location-input">
                         <p id="location-error"></p>
                     </div>
                     <div class="fn form-group">
@@ -104,10 +118,10 @@
                     </div>
                     <div class="fn form-group full-width">
                         <label>Additional Notes (Optional)</label>
-                        <textarea name="Message" placeholder="write any additional notes" ></textarea>
-
+                        <textarea name="Message" placeholder="write any additional notes"></textarea>
+                        <button>Book Now <span>&rarr;</span></button>
                 </form>
-                <button>Book Now <span>&rarr;</span></button>
+
 
             </div>
         </section>
@@ -118,7 +132,7 @@
 
 
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++footer++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-     <footer>
+    <footer>
         <div class="footer-section">
             <div class="footer-items fl">
                 <div class="footer-logo">
@@ -133,7 +147,8 @@
                                 src="/assets/facebook-square-icon.svg" alt="/facebook"></a>
                         <a href="https://www.instagram.com/gharassist?igsh=MTN3dnhwaWNuNjJmcw==" target="_blank"> <img
                                 src="/assets/ig-instagram-icon.svg" alt="instagram"></a>
-                        <a href="https://x.com/GharAssist_AG" target="_blank"> <img src="/assets/x-svg.svg" alt="x "></a>
+                        <a href="https://x.com/GharAssist_AG" target="_blank"> <img src="/assets/x-svg.svg"
+                                alt="x "></a>
                         <a href="https://www.youtube.com/@GharAssist" target="_blank"><img
                                 src="/assets/youtube-color-icon.svg" alt="youtube"></a>
                         <a href="https://wa.me/918722284784" target="_blank"><img src="/assets/wa-whatsapp-icon.svg"
@@ -200,5 +215,6 @@
 
 </body>
 <script src="/js/booking.js"></script>
+<script src="/js/public-nav.js"></script>
 
 </html>

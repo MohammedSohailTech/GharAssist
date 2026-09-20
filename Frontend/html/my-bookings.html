@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings - GharAssist</title>
+
+    <!-- Customer CSS -->
+    <link rel="stylesheet" href="/css/customer.css">
+    <link rel="stylesheet" href="/css/my-bookings.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ===============================
+             SIDEBAR
+        ================================ -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <img src="/assets/GA-logo.png" alt="GharAssist Logo">
+
+                <span>Customer Panel</span>
+
+            </div>
+
+
+            <nav>
+                <a href="/html/customer.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="/html/home.html">
+                    <i class="fa-solid fa-globe"></i>
+                    Home
+                </a>
+
+                <a href="/html/services.html">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    Services
+                </a>
+
+                <a href="/html/booking.html">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    Book Service
+                </a>
+
+                <a href="/html/my-bookings.html" class="active">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    My Bookings
+                </a>
+
+                <a href="/html/customer-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+
+                <a href="#" id="logout-button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ===============================
+             MAIN CONTENT
+        ================================ -->
+
+        <main class="main-content">
+
+
+            <!-- ===============================
+                 HEADER
+            ================================ -->
+
+            <header>
+
+                <div class="top-header">
+
+
+                    <div class="header-left">
+
+                        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+
+                        <h1>My Bookings</h1>
+
+                    </div>
+
+
+                    <div class="header-right">
+
+
+                        <!-- Notification -->
+
+                        <div class="notification" id="notification">
+
+                            <i class="fa-solid fa-bell"></i>
+
+                            <span class="notification-badge" id="notification-badge">
+                                0
+                            </span>
+
+                        </div>
+
+
+                        <div class="notification-dropdown" id="notification-dropdown">
+
+                            <h3>Notifications</h3>
+
+                            <p>No new notifications</p>
+
+                        </div>
+
+
+                        <!-- Profile -->
+
+                        <div class="profile" id="profile">
+
+                            <i class="fa-solid fa-user-circle"></i>
+
+                            <span>Customer</span>
+
+                            <i class="fa-solid fa-chevron-down down"></i>
+
+                        </div>
+
+
+                        <!-- Profile Dropdown -->
+
+                        <div class="profile-dropdown" id="profile-dropdown">
+
+
+                            <div class="profile-dropdown-header">
+
+                                <i class="fa-solid fa-user-circle"></i>
+
+                                <span>Customer</span>
+
+                            </div>
+
+
+                            <a href="/html/customer-profile.html">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                Profile
+
+                            </a>
+
+
+                            <button id="profile-logout-button">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                Logout
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ===============================
+                 PAGE CONTENT
+            ================================ -->
+
+            <div class="dashboard-content">
+
+
+                <!-- Page Heading -->
+
+                <div class="welcome-section">
+
+                    <div>
+
+                        <h2>My Bookings</h2>
+
+                        <p>
+                            View and track all your service bookings.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===============================
+                     BOOKINGS SECTION
+                ================================ -->
+
+                <div class="recent-bookings">
+
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Booking History</h2>
+
+                        </div>
+
+
+                        <div>
+
+                            <button id="refresh-bookings" class="refresh-button">
+
+                                <i class="fa-solid fa-rotate"></i>
+
+                                Refresh
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Table -->
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>#</th>
+                                    <th>Service</th>
+                                    <th>Date</th>
+                                    <th>Location</th>
+                                    <th>Provider</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customer-bookings-table-body">
+
+                                <!-- Bookings will be loaded by JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Booking Count -->
+
+                    <div class="booking-count">
+
+                        <span id="booking-count">
+                            Showing 0 bookings
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- BOOKING DETAILS MODAL -->
+
+    <div class="booking-modal" id="booking-modal">
+
+        <div class="booking-modal-content">
+
+            <div class="booking-modal-header">
+
+                <h2>Booking Details</h2>
+
+                <button id="close-booking-modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <div class="booking-details">
+
+                <p>
+                    <strong>Service:</strong>
+                    <span id="modal-service"></span>
+                </p>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="modal-name"></span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="modal-email"></span>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <span id="modal-phone"></span>
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    <span id="modal-location"></span>
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    <span id="modal-date"></span>
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    <span id="modal-status"></span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- ===============================
+         JAVASCRIPT
+    ================================ -->
+
+    <script src="/js/customer-header.js"></script>
+
+    <script src="/js/my-bookings.js"></script>
+
+
+</body>
+
+</html>

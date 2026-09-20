@@ -4,15 +4,30 @@ import userRoutes from "./routes/userRoutes.js"
 import bookingRoutes from "./routes/bookingRoute.js"
 import contactRoutes from "./routes/contactRoutes.js"
 import cors from "cors"
+import transporter from "./config/email.js";
 
 const app = express()
 
-app.use(cors())
-app.use(express.json())
+app.use(cors({
+  origin: [
+    "http://127.0.0.1:5501",
+    "http://127.0.0.1:3001",
+    "https://gharassist-1.onrender.com",
+    "https://gharassist.com"
+  ]
+}))
+app.use((req, res, next) => {
+  console.log("REQUEST:", req.method, req.url);
+  next();
+});
 
+app.use(express.json())
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
+// app.get("/test", (req, res) => {
+//   res.send("SERVER TEST WORKING");
+// });
 
 //USER ROUTES
 app.use("/api/users", userRoutes)

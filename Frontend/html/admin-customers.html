@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customers - GharAssist</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <!-- Customers CSS -->
+    <link rel="stylesheet" href="/css/admin-customers.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+         ========================================= -->
+
+    <aside class="sidebar">
+
+        <div class="side-logo-container">
+
+            <img src="/assets/GA-logo.png" alt="GharAssist Logo">
+
+            <h2>Admin Panel</h2>
+
+        </div>
+
+
+        <ul class="side-li">
+
+            <li class="side-a">
+
+                <a href="/html/admin.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+
+            <li class="side-a">
+
+                <a href="/html/bookings.html">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Bookings
+
+                </a>
+
+            </li>
+
+
+            <li class="side-a">
+
+                <a href="/html/admin-customers.html" class="active">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Customers
+
+                </a>
+
+            </li>
+
+
+            <li class="side-a">
+
+                <a href="/html/service-providers.html">
+
+                    <i class="fa-solid fa-user-gear"></i>
+
+                    Service Providers
+
+                </a>
+
+            </li>
+
+
+            <li class="side-a">
+
+                <a href="/html/admin-services.html">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    Services
+
+                </a>
+
+            </li>
+
+
+            <li class="side-a">
+
+                <a href="#" id="logout-button">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div class="header-container">
+
+                <div class="dash-left">
+                    <i class="fa-solid fa-bars" id="menu-toggle"></i>
+                    <h1>Customers</h1>
+                </div>
+
+                <div class="dash-right">
+
+                    <!-- Notification -->
+                    <div class="notification" id="notification">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notification-badge" id="notification-badge">0</span>
+                    </div>
+
+                    <!-- Notification Dropdown -->
+                    <div class="notification-dropdown" id="notification-dropdown">
+
+                        <h3>Notifications</h3>
+
+                        <div class="notification-item">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>New booking received</span>
+                        </div>
+
+                        <div class="notification-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>New contact message</span>
+                        </div>
+
+                        <div class="notification-item">
+                            <i class="fa-solid fa-user"></i>
+                            <span>New customer registered</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="profile" id="profile">
+
+                        <i class="fa-solid fa-user-circle"></i>
+
+                        <span>Admin</span>
+
+                        <i class="fa-solid fa-chevron-down down"></i>
+
+                        <!-- Profile Dropdown -->
+                        <div class="profile-dropdown" id="profile-dropdown">
+
+                            <div class="profile-dropdown-item">
+                                <i class="fa-solid fa-user"></i>
+                                <a href="/html/admin-profile.html">Admin Profile</a>
+                            </div>
+
+                            <div class="profile-dropdown-item" id="profile-logout-button">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>Logout</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================================
+             PAGE HERO
+             ========================================= -->
+
+        <div class="hero-container">
+
+
+            <div class="left-hero-text">
+
+                <h1>Customers</h1>
+
+                <p>View and manage registered admin-customers.</p>
+
+            </div>
+
+
+            <div class="right-hero-calender">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <p id="current-date"></p>
+
+
+                <button id="refresh-customers">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Refresh
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================================
+             CUSTOMERS TABLE
+             ========================================= -->
+
+        <section class="hero-table-container">
+
+
+            <div class="table-container">
+
+
+                <div class="table-title">
+
+
+                    <div class="left-table-title">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <h2>All Customers</h2>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="table">
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Customer</th>
+
+                                <th>Email</th>
+
+                                <th>Phone</th>
+
+                                <th>Role</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="customers-table-body">
+
+                            <!-- Customers will be added by JavaScript -->
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         CUSTOMER VIEW MODAL
+         ========================================= -->
+
+    <div id="customer-modal" class="view-modal">
+
+
+        <div class="view-modal-content">
+
+
+            <button id="close-customer-modal" class="close-modal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <h2>Customer Details</h2>
+
+
+            <p>
+                <strong>Name:</strong>
+                <span id="customer-name"></span>
+            </p>
+
+
+            <p>
+                <strong>Email:</strong>
+                <span id="customer-email"></span>
+            </p>
+
+
+            <p>
+                <strong>Phone:</strong>
+                <span id="customer-phone"></span>
+            </p>
+
+
+            <p>
+                <strong>Role:</strong>
+                <span id="customer-role"></span>
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+    <script src="/js/auth.js"></script>
+    <script src="/js/admin-header.js"></script>
+    <script src="/js/admin-customers.js"></script>
+
+
+</body>
+
+</html>

@@ -6,6 +6,15 @@ const bookingSchema = new mongoose.Schema({
         ref: "User",
         required: true
     },
+    providerId: {
+
+        type: mongoose.Schema.Types.ObjectId,
+
+        ref: "User",
+
+        default: null
+
+    },
     service: {
         type: String,
         required: true

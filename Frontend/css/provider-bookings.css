@@ -1,0 +1,205 @@
+/* =================================
+   PROVIDER BOOKINGS PAGE
+================================= */
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    color: #041c4a;
+}
+
+.left-hero-text h1 {
+    margin-bottom: 8px;
+}
+
+.left-hero-text p {
+    color: #252323;
+}
+
+.right-hero-calender {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.right-hero-calender i {
+    font-size: 24px;
+    color: #041c4a;
+}
+
+.right-hero-calender p {
+    color: #041c4a;
+    font-weight: 600;
+}
+
+.right-hero-calender button {
+    border: none;
+    background: #f5b400;
+    color: #041c4a;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.right-hero-calender button:hover {
+    background: #e0a500;
+}
+
+
+/* =================================
+   PROVIDER TABLE
+================================= */
+
+.hero-table-container {
+    padding: 0 20px 30px;
+}
+
+.hero-table-container .table-container {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 14px;
+    text-align: left;
+}
+
+.table th {
+    background: #041c4a;
+    color: #fff;
+}
+
+.table tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table tbody tr:hover {
+    background: #fff8e1;
+}
+
+
+/* =================================
+   VIEW BUTTON
+================================= */
+
+.view-booking {
+    border: none;
+    background: #041c4a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.view-booking:hover {
+    background: #f5b400;
+    color: #041c4a;
+}
+
+
+/* =================================
+   PAGINATION
+================================= */
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    border: none;
+    background: #eee;
+    color: #041c4a;
+    padding: 8px 12px;
+    margin-left: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background: #f5b400;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    .hero-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    .right-hero-calender {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .hero-table-container {
+        padding: 0 15px 25px;
+    }
+
+    .hero-table-container .table-container {
+        padding: 15px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hero-container {
+        padding: 15px 10px;
+    }
+
+    .left-hero-text h1 {
+        font-size: 24px;
+    }
+
+    .left-hero-text p {
+        font-size: 14px;
+    }
+
+    .right-hero-calender {
+        gap: 10px;
+    }
+
+    .right-hero-calender button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .hero-table-container {
+        padding: 0 10px 20px;
+    }
+
+    .pagination {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}

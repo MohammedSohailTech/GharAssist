@@ -17,23 +17,36 @@
             </div>
             <div class="nav-link ">
                 <ul class="nav-link-items side-nav">
-                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/html/home.html">Home</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a href="/html/services.html">Services
+                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/html/home.html"
+                            class="active">Home</a>
+                    </li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a
+                            href="/html/services.html">Services
                         </a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/html/about.html">About</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/html/how.html">How It Works</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a href="/html/contact.html">Contact Us</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/html/about.html">About</a>
+                    </li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/html/how.html">How
+                            It Works</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a
+                            href="/html/contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="nav-btn">
-                <a href="/html/login.html" class="login-btn">Login</a>
-                <a href="/html/booking.html" class="book-btn">Book Now</a>
+            <div class="nav-btn" id="public-nav-buttons">
+                <a href="/html/login.html" class="login-btn" id="nav-login">Login</a>
+                <a href="/html/booking.html" class="book-btn" id="nav-book">Book Now</a>
+
+                <a href="/html/customer.html" class="login-btn" id="nav-dashboard" style="display: none;">
+                    Dashboard
+                </a>
+
+                <a href="/html/my-bookings.html" class="book-btn" id="nav-my-bookings" style="display: none;">
+                    My Bookings
+                </a>
             </div>
             <div class="menu-btn">
                 <i class="fa-solid fa-bars" id="hamburger"></i>
             </div>
         </nav>
-
     </header>
     <!-- +++++++++++++++++++++++++++++hero++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
@@ -251,5 +264,6 @@
 
 </body>
 <script src="/js/home.js"></script>
+<script src="/js/public-nav.js"></script>
 
 </html>

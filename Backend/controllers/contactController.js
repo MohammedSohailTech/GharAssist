@@ -42,7 +42,7 @@ export const getAllContacts = async (req,res)=>{
         const contacts = await Contact.find()
         if(contacts.length === 0){
            return res.status(404).json({
-                message:"No contact founnd"
+                message:"No contact found"
             })
         }
         res.status(200).json({

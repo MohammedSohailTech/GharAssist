@@ -10,19 +10,24 @@
 </head>
 
 <body>
-     <header>
+    <header>
         <nav>
             <div class="nav-logo">
                 <img src="/assets/GA-logo.png" class="logo-svg" alt="GharAssist-logo">
             </div>
             <div class="nav-link ">
                 <ul class="nav-link-items side-nav">
-                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/html/home.html">Home</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a href="/html/services.html">Services
+                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/html/home.html">Home</a>
+                    </li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a
+                            href="/html/services.html">Services
                         </a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/html/about.html">About</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/html/how.html">How It Works</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a href="/html/contact.html">Contact Us</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/html/about.html">About</a>
+                    </li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/html/how.html">How
+                            It Works</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a
+                            href="/html/contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="nav-btn">
@@ -99,7 +104,8 @@
                         We've sent a code to
                     </p>
                     <p class="masked-email">
-                        so********@gmail.com <a href="#">Change</a>
+                        <span id="masked-email"></span>
+                        <a href="/html/forgot.html">Change</a>
                     </p>
                 </div>
             </div>
@@ -119,10 +125,11 @@
                     <input type="text" maxlength="1">
                     <input type="text" maxlength="1">
                 </div>
-                <p class="resend"> Didn't receive OTP?
-                    <a href="#">Resend OTP</a>
-                    <span>(30s)</span>
-                </p>
+                <span class="resend">
+                    Didn't receive OTP?
+                    <a href="#" id="resend-otp">Resend OTP</a>
+                    <span id="otp-timer">(30s)</span>
+                </span>
                 <div class="otp-form-field">
                     <button class="otp-button">Verify OTP <span>&rarr;</span></button>
                 </div>
@@ -137,7 +144,7 @@
 
 
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++footer++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-     <footer>
+    <footer>
         <div class="footer-section">
             <div class="footer-items fl">
                 <div class="footer-logo">
@@ -152,7 +159,8 @@
                                 src="/assets/facebook-square-icon.svg" alt="/facebook"></a>
                         <a href="https://www.instagram.com/gharassist?igsh=MTN3dnhwaWNuNjJmcw==" target="_blank"> <img
                                 src="/assets/ig-instagram-icon.svg" alt="instagram"></a>
-                        <a href="https://x.com/GharAssist_AG" target="_blank"> <img src="/assets/x-svg.svg" alt="x "></a>
+                        <a href="https://x.com/GharAssist_AG" target="_blank"> <img src="/assets/x-svg.svg"
+                                alt="x "></a>
                         <a href="https://www.youtube.com/@GharAssist" target="_blank"><img
                                 src="/assets/youtube-color-icon.svg" alt="youtube"></a>
                         <a href="https://wa.me/918722284784" target="_blank"><img src="/assets/wa-whatsapp-icon.svg"
@@ -220,4 +228,5 @@
 
 </body>
 <script src="/js/verifyotp.js"></script>
+
 </html>

@@ -10,24 +10,37 @@
 </head>
 
 <body>
-     <header>
+    <header>
         <nav>
             <div class="nav-logo">
                 <img src="/assets/GA-logo.png" class="logo-svg" alt="GharAssist-logo">
             </div>
             <div class="nav-link ">
                 <ul class="nav-link-items side-nav">
-                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/html/home.html">Home</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a href="/html/services.html">Services
+                    <li class="an-style"><i class="side-icons fa-solid fa-house"></i><a href="/html/home.html">Home</a>
+                    </li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-screwdriver-wrench nav-icon"></i><a
+                            href="/html/services.html">Services
                         </a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/html/about.html">About</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/html/how.html">How It Works</a></li>
-                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a href="/html/contact.html">Contact Us</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-user"></i><a href="/html/about.html">About</a>
+                    </li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-circle-info"></i><a href="/html/how.html"
+                            class="active">How It Works</a></li>
+                    <li class="an-style"><i class="side-icons fa-solid fa-phone"></i><a
+                            href="/html/contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="nav-btn">
-                <a href="/html/login.html" class="login-btn">Login</a>
-                <a href="/html/booking.html" class="book-btn">Book Now</a>
+            <div class="nav-btn" id="public-nav-buttons">
+                <a href="/html/login.html" class="login-btn" id="nav-login">Login</a>
+                <a href="/html/booking.html" class="book-btn" id="nav-book">Book Now</a>
+
+                <a href="/html/customer.html" class="login-btn" id="nav-dashboard" style="display: none;">
+                    Dashboard
+                </a>
+
+                <a href="/html/my-bookings.html" class="book-btn" id="nav-my-bookings" style="display: none;">
+                    My Bookings
+                </a>
             </div>
             <div class="menu-btn">
                 <i class="fa-solid fa-bars" id="hamburger"></i>
@@ -112,7 +125,7 @@
 
                 </div>
                 <div class="ready-right">
-                     <a href="/html/booking.html" class="ready-book-btn">Book Now <span>&rarr;</span></a>
+                    <a href="/html/booking.html" class="ready-book-btn">Book Now <span>&rarr;</span></a>
 
                 </div>
 
@@ -121,87 +134,89 @@
 
 
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++footer++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-         <footer>
-        <div class="footer-section">
-            <div class="footer-items fl">
-                <div class="footer-logo">
-                    <img src="/assets/GA-logo.png" alt="GharAssist-logo" id="footer-logo">
+        <footer>
+            <div class="footer-section">
+                <div class="footer-items fl">
+                    <div class="footer-logo">
+                        <img src="/assets/GA-logo.png" alt="GharAssist-logo" id="footer-logo">
+                    </div>
+                    <div class="footer-logo-para">
+                        <h4>Trusted Home Services,<br> Anytime, Anywhere</h4>
+                    </div>
+                    <div class="footer-logo-sm-icon">
+                        <div class="footer-sm-icon-box">
+                            <a href="https://www.facebook.com/profile.php?id=61589088454035" target="_blank"> <img
+                                    src="/assets/facebook-square-icon.svg" alt="/facebook"></a>
+                            <a href="https://www.instagram.com/gharassist?igsh=MTN3dnhwaWNuNjJmcw==" target="_blank">
+                                <img src="/assets/ig-instagram-icon.svg" alt="instagram"></a>
+                            <a href="https://x.com/GharAssist_AG" target="_blank"> <img src="/assets/x-svg.svg"
+                                    alt="x "></a>
+                            <a href="https://www.youtube.com/@GharAssist" target="_blank"><img
+                                    src="/assets/youtube-color-icon.svg" alt="youtube"></a>
+                            <a href="https://wa.me/918722284784" target="_blank"><img src="/assets/wa-whatsapp-icon.svg"
+                                    alt="WhatsApp"></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-logo-para">
-                    <h4>Trusted Home Services,<br> Anytime, Anywhere</h4>
+                <div class="footer-items">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="/html/home.html">Home</a></li>
+                        <li><a href="/html/services.html">Services</a></li>
+                        <li><a href="/html/about.html">About Us</a></li>
+                        <li><a href="/html/how.html">How It Works</a></li>
+                        <li><a href="/html/contact.html">Contact Us</a></li>
+                    </ul>
                 </div>
-                <div class="footer-logo-sm-icon">
-                    <div class="footer-sm-icon-box">
-                        <a href="https://www.facebook.com/profile.php?id=61589088454035" target="_blank"> <img
-                                src="/assets/facebook-square-icon.svg" alt="/facebook"></a>
-                        <a href="https://www.instagram.com/gharassist?igsh=MTN3dnhwaWNuNjJmcw==" target="_blank"> <img
-                                src="/assets/ig-instagram-icon.svg" alt="instagram"></a>
-                        <a href="https://x.com/GharAssist_AG" target="_blank"> <img src="/assets/x-svg.svg" alt="x "></a>
-                        <a href="https://www.youtube.com/@GharAssist" target="_blank"><img
-                                src="/assets/youtube-color-icon.svg" alt="youtube"></a>
-                        <a href="https://wa.me/918722284784" target="_blank"><img src="/assets/wa-whatsapp-icon.svg"
-                                alt="WhatsApp"></a>
+                <div class="footer-items">
+                    <h2>Services</h2>
+                    <ul>
+                        <li><a>AC Services</a></li>
+                        <li><a>Plumbing Services</a></li>
+                        <li><a>Electrical Services</a></li>
+                        <li><a>Cleaning Servicess</a></li>
+                        <!-- <li><a>AC Services</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-items">
+                    <h2>Support</h2>
+                    <ul>
+                        <li><a>Help Centre</a></li>
+                        <li><a>FAQs</a></li>
+                        <li><a>Terms & Conditions</a></li>
+                        <li><a>Privacy Policy</a></li>
+                        <!-- <li><a>Contact Us</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-items contacts">
+                    <h2>Contact Us</h2>
+                    <div class="footer-contact">
+                        <a href="tel:+91 8722284784"> <img src="/assets/phone-call-white-icon.svg" alt="call" </a>
+                            <a href="tel:+91 8722284784">+91 8722284784</a>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="mailto:support.gharassist@gmail.com" target="_blank"><img src="/assets/email-svg.svg"
+                                class="footer-email" alt="email" </a>
+                            <a href="mailto:support.gharassist@gmail.com" class="footer-email" target="_blank">
+                                support.gharassist@gmail.com
+                            </a>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="https://maps.app.goo.gl/dmeJja5q6bEQUBo99" target="_blank"> <img
+                                src="/assets/location-pointer-white-icon.svg" alt="location" </a>
+                            <a href="https://maps.app.goo.gl/dmeJja5q6bEQUBo99" target="_blank"> Kalaburgi,
+                                Karnataka </a>
                     </div>
                 </div>
             </div>
-            <div class="footer-items">
-                <h2>Quick Links</h2>
-                <ul>
-                    <li><a href="/html/home.html">Home</a></li>
-                    <li><a href="/html/services.html">Services</a></li>
-                    <li><a href="/html/about.html">About Us</a></li>
-                    <li><a href="/html/how.html">How It Works</a></li>
-                    <li><a href="/html/contact.html">Contact Us</a></li>
-                </ul>
+            <div class="copyright">
+                <hr>
+                <p> &copy 2026 GharAssist. All Rights Reserved</p>
             </div>
-            <div class="footer-items">
-                <h2>Services</h2>
-                <ul>
-                    <li><a>AC Services</a></li>
-                    <li><a>Plumbing Services</a></li>
-                    <li><a>Electrical Services</a></li>
-                    <li><a>Cleaning Servicess</a></li>
-                    <!-- <li><a>AC Services</a></li> -->
-                </ul>
-            </div>
-            <div class="footer-items">
-                <h2>Support</h2>
-                <ul>
-                    <li><a>Help Centre</a></li>
-                    <li><a>FAQs</a></li>
-                    <li><a>Terms & Conditions</a></li>
-                    <li><a>Privacy Policy</a></li>
-                    <!-- <li><a>Contact Us</a></li> -->
-                </ul>
-            </div>
-            <div class="footer-items contacts">
-                <h2>Contact Us</h2>
-                <div class="footer-contact">
-                    <a href="tel:+91 8722284784"> <img src="/assets/phone-call-white-icon.svg" alt="call" </a>
-                        <a href="tel:+91 8722284784">+91 8722284784</a>
-                </div>
-                <div class="footer-contact">
-                    <a href="mailto:support.gharassist@gmail.com" target="_blank"><img src="/assets/email-svg.svg"
-                            class="footer-email" alt="email" </a>
-                        <a href="mailto:support.gharassist@gmail.com" class="footer-email" target="_blank">
-                            support.gharassist@gmail.com
-                        </a>
-                </div>
-                <div class="footer-contact">
-                    <a href="https://maps.app.goo.gl/dmeJja5q6bEQUBo99" target="_blank"> <img
-                            src="/assets/location-pointer-white-icon.svg" alt="location" </a>
-                        <a href="https://maps.app.goo.gl/dmeJja5q6bEQUBo99" target="_blank"> Kalaburgi,
-                            Karnataka </a>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <hr>
-            <p> &copy 2026 GharAssist. All Rights Reserved</p>
-        </div>
-    </footer>
+        </footer>
 
 
 </body>
 <script src="/js/how.js"></script>
+<script src="/js/public-nav.js"></script>
 </html>

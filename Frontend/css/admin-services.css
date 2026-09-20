@@ -1,0 +1,132 @@
+/* Active sidebar link */
+.side-a a.active {
+    color: #f5b400;
+}
+
+
+/* Service cards container */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+
+/* Service card */
+.service-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 130px;
+}
+
+
+/* Service icon */
+.service-icon {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5b400;
+    border-radius: 50%;
+}
+
+.service-icon i {
+    color: #041c4a;
+    font-size: 24px;
+}
+
+
+/* Service information */
+.service-info {
+    flex: 1;
+}
+
+.service-info h3 {
+    color: #041c4a;
+    margin-bottom: 8px;
+}
+
+.service-info p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+/* Status */
+.service-status {
+    background: #dff7e8;
+    color: #18733b;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Refresh button */
+.right-hero-calender button {
+    border: none;
+    background: #f5b400;
+    color: #041c4a;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.right-hero-calender button:hover {
+    opacity: 0.9;
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-table-container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .right-hero-calender {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width: 668px) {
+
+    .hero-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .right-hero-calender {
+        justify-content: flex-start;
+        padding: 10px 0;
+    }
+
+    .service-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .service-status {
+        margin-left: 75px;
+    }
+
+}

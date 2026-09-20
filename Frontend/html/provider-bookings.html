@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings - GharAssist</title>
+
+    <link rel="stylesheet" href="/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/provider.css">
+    <link rel="stylesheet" href="/css/bookings.css">
+    <link rel="stylesheet" href="/css/admin.css">
+     <!-- <link rel="stylesheet" href="/css/provider-bookings.css"> -->
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="/assets/GA-logo.png" alt="GharAssist Logo">
+            <span>Provider Panel</span>
+        </div>
+
+        <nav>
+
+            <a href="/html/provider.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="/html/provider-bookings.html" class="active">
+                <i class="fa-solid fa-calendar-check"></i>
+                My Bookings
+            </a>
+
+            <a href="/html/provider-profile.html">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+
+            <a href="#" id="logout-button">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header>
+
+            <div class="top-header">
+
+                <div class="header-left">
+
+                    <i class="fa-solid fa-bars" id="menu-toggle"></i>
+
+                    <h1>My Bookings</h1>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <!-- Notification -->
+                    <div class="notification" id="notification">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                        <span class="notification-badge" id="notification-badge">
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <!-- Notification Dropdown -->
+                    <div class="notification-dropdown" id="notification-dropdown">
+
+                        <h3>Notifications</h3>
+
+                        <p>No new notifications</p>
+
+                    </div>
+
+
+                    <!-- Profile -->
+                    <div class="profile" id="profile">
+
+                        <i class="fa-solid fa-user-circle"></i>
+
+                        <span>Provider</span>
+
+                        <i class="fa-solid fa-chevron-down down"></i>
+
+                    </div>
+
+
+                    <!-- Profile Dropdown -->
+                    <div class="profile-dropdown" id="profile-dropdown">
+
+                        <div class="profile-dropdown-header">
+
+                            <i class="fa-solid fa-user-circle"></i>
+
+                            <span>Provider</span>
+
+                        </div>
+
+
+                        <a href="/html/provider-profile.html">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Profile
+
+                        </a>
+
+
+                        <button id="profile-logout-button">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE TITLE -->
+        <div class="hero-container">
+
+            <div class="left-hero-text">
+
+                <h1>My Bookings</h1>
+
+                <p>
+                    View and manage your assigned service bookings.
+                </p>
+
+            </div>
+
+
+            <div class="right-hero-calender">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <p id="current-date"></p>
+
+                <button id="refresh-provider-bookings">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Refresh
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOKINGS CONTAINER -->
+        <section class="hero-table-container">
+
+            <div class="table-container">
+
+
+                <!-- SEARCH AND FILTERS -->
+                <div class="booking-tools">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="booking-search" placeholder="Search by name, phone, email or service...">
+
+                    </div>
+
+
+                    <select id="service-filter">
+
+                        <option value="all">
+                            All Services
+                        </option>
+
+                        <option value="AC Repair">
+                            AC Repair
+                        </option>
+
+                        <option value="Plumbing">
+                            Plumbing
+                        </option>
+
+                        <option value="Electrical">
+                            Electrical
+                        </option>
+
+                        <option value="Cleaning">
+                            Cleaning
+                        </option>
+
+                        <option value="Refrigerator Repair">
+                            Refrigerator Repair
+                        </option>
+
+                    </select>
+
+
+                    <select id="status-filter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="accepted">
+                            Accepted
+                        </option>
+
+                        <option value="rejected">
+                            Rejected
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+
+                    <select id="sort-filter">
+
+                        <option value="newest">
+                            Newest First
+                        </option>
+
+                        <option value="oldest">
+                            Oldest First
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TABLE -->
+                <div class="table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Customer Name</th>
+
+                                <th>Phone</th>
+
+                                <th>Email</th>
+
+                                <th>Service</th>
+
+                                <th>Location</th>
+
+                                <th>Date & Time</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="provider-bookings-table-body">
+
+                            <!-- Provider bookings will be added here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+                <div class="pagination">
+
+                    <span id="booking-count">
+                        Showing 0 bookings
+                    </span>
+
+
+                    <div>
+
+                        <button>
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+                        <button class="active">
+                            1
+                        </button>
+
+
+                        <button>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOOKING VIEW MODAL -->
+    <div id="booking-modal" class="view-modal">
+
+        <div class="view-modal-content">
+
+            <button id="close-booking-modal" class="close-modal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <h2>Booking Details</h2>
+
+
+            <p>
+                <strong>Customer:</strong>
+                <span id="booking-name"></span>
+            </p>
+
+
+            <p>
+                <strong>Phone:</strong>
+                <span id="booking-phone"></span>
+            </p>
+
+
+            <p>
+                <strong>Email:</strong>
+                <span id="booking-email"></span>
+            </p>
+
+
+            <p>
+                <strong>Service:</strong>
+                <span id="booking-service"></span>
+            </p>
+
+
+            <p>
+                <strong>Location:</strong>
+                <span id="booking-location"></span>
+            </p>
+
+
+            <p>
+                <strong>Date:</strong>
+                <span id="booking-date"></span>
+            </p>
+
+
+            <p>
+                <strong>Status:</strong>
+                <span id="booking-status"></span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="/js/provider-header.js"></script>
+    <script src="/js/provider-bookings.js"></script>
+
+</body>
+
+</html>

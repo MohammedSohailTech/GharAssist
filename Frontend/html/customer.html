@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Dashboard - GharAssist</title>
+
+    <link rel="stylesheet" href="/css/customer.css">
+
+    <link rel="stylesheet" href="/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ===============================
+             SIDEBAR
+        ================================ -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <img src="/assets/GA-logo.png" alt="GharAssist Logo">
+
+                <span>Customer Panel</span>
+
+            </div>
+
+
+            <nav>
+
+                <a href="/html/customer.html" class="active">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="/html/home.html">
+                    <i class="fa-solid fa-globe"></i>
+                    Home
+                </a>
+
+                <a href="/html/services.html">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    Services
+                </a>
+
+                <a href="/html/booking.html">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    Book Service
+                </a>
+
+                <a href="/html/my-bookings.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    My Bookings
+                </a>
+
+                <a href="/html/customer-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+
+                <a href="#" id="logout-button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ===============================
+             MAIN CONTENT
+        ================================ -->
+
+        <main class="main-content">
+
+
+            <!-- ===============================
+                 HEADER
+            ================================ -->
+
+            <header>
+
+                <div class="top-header">
+
+
+                    <div class="header-left">
+
+                        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+
+                        <h1>Dashboard</h1>
+
+                    </div>
+
+
+                    <div class="header-right">
+
+
+                        <!-- Notification -->
+
+                        <div class="notification" id="notification">
+
+                            <i class="fa-solid fa-bell"></i>
+
+                            <span class="notification-badge" id="notification-badge">
+                                0
+                            </span>
+
+                        </div>
+
+
+                        <div class="notification-dropdown" id="notification-dropdown">
+
+                            <h3>Notifications</h3>
+
+                            <p>No new notifications</p>
+
+                        </div>
+
+
+                        <!-- Profile -->
+
+                        <div class="profile" id="profile">
+
+                            <i class="fa-solid fa-user-circle"></i>
+
+                            <span>Customer</span>
+
+                            <i class="fa-solid fa-chevron-down down"></i>
+
+                        </div>
+
+
+                        <!-- Profile Dropdown -->
+
+                        <div class="profile-dropdown" id="profile-dropdown">
+
+
+                            <div class="profile-dropdown-header">
+
+                                <i class="fa-solid fa-user-circle"></i>
+
+                                <span>Customer</span>
+
+                            </div>
+
+
+                            <a href="/html/customer-profile.html">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                Profile
+
+                            </a>
+
+
+                            <button id="profile-logout-button">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ===============================
+                 DASHBOARD CONTENT
+            ================================ -->
+
+            <div class="dashboard-content">
+
+
+                <!-- Welcome -->
+
+                <div class="welcome-section">
+
+                    <div>
+
+                        <h2>Welcome Back, Customer!</h2>
+
+                        <p>
+                            Here's what's happening with your service bookings.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===============================
+                     STATISTICS
+                ================================ -->
+
+                <div class="stats-container">
+
+
+                    <!-- Total Bookings -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                        </div>
+
+                        <div class="card-total">
+
+                            <h3>Total Bookings</h3>
+
+                            <p id="total-bookings">0</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Pending -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                        </div>
+
+                        <div class="card-total">
+
+                            <h3>Pending Bookings</h3>
+
+                            <p id="pending-bookings">0</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Accepted -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        </div>
+
+                        <div class="card-total">
+
+                            <h3>Accepted Bookings</h3>
+
+                            <p id="accepted-bookings">0</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Completed -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-check-double"></i>
+
+                        </div>
+
+                        <div class="card-total">
+
+                            <h3>Completed Bookings</h3>
+
+                            <p id="completed-bookings">0</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===============================
+                     RECENT BOOKINGS
+                ================================ -->
+
+                <div class="recent-bookings">
+
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Recent Bookings</h2>
+
+                        </div>
+
+
+                        <div>
+
+                            <a href="/html/my-bookings.html">
+
+                                View All Bookings
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Service</th>
+
+                                    <th>Date</th>
+
+                                    <th>Status</th>
+                                    <th>Provider</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customer-bookings-body">
+
+                                <!-- Bookings will be loaded by JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- ===============================
+         JAVASCRIPT
+    ================================ -->
+
+    <script src="/js/customer-header.js"></script>
+    <script src="/js/customer.js"></script>
+
+
+</body>
+
+</html>

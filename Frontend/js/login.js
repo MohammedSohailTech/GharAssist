@@ -11,9 +11,9 @@ loginForm.addEventListener('submit', async function (e) {
 
     const emailPhone = document.querySelector('#login-input').value
     const password = document.querySelector('#login-pswd').value
-    console.log("Email sent:", emailPhone)
-    console.log("Password sent:", password)
-    const response = await fetch('http://localhost:3000/api/users/login', {
+    // console.log("Email sent:", emailPhone)
+    // console.log("Password sent:", password)
+    const response = await fetch('http://127.0.0.1:3000/api/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,8 +26,22 @@ loginForm.addEventListener('submit', async function (e) {
     })
     const data = await response.json()
 
-    localStorage.setItem('token', data.token)
-    window.location.href = 'home.html'
+    if (!response.ok || !data.token) {
+        alert(data.message || "Login failed");
+        return;
+    }
+
+    localStorage.setItem("token", data.token);
+
+    if (data.role === "admin") {
+        window.location.href = "/html/admin.html";
+    }
+    else if (data.role === "provider") {
+        window.location.href = "/html/provider.html";
+    }
+    else if (data.role === "customer") {
+        window.location.href = "/html/customer.html";
+    }
 })
 const emailphoneInput = document.querySelector('#login-input')
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

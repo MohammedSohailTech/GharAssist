@@ -36,6 +36,11 @@ nav {
     font-weight: 500;
     text-align: center;
 }
+/* ++++++++NAV LINK ACTIVE++++++++++ */
+.nav-link-items a.active {
+    color: #f5b400;
+}
+
 
 @media (max-width:768px) {
 

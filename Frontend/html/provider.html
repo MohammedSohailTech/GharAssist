@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Provider Dashboard</title>
+    <link rel="stylesheet" href="/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/provider.css">
+    <link rel="stylesheet" href="/css/bookings.css">
+    <link rel="stylesheet" href="/css/admin.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ++++++++++++++++++++++ SIDEBAR ++++++++++++++++++++++ -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="/assets/GA-logo.png">
+                <span>Provider Panel</span>
+            </div>
+
+            <nav>
+
+                <a href="/html/provider.html" class="active">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="/html/provider-bookings.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    My Bookings
+                </a>
+
+                <a href="/html/provider-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+
+                <a href="#" id="logout-button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ++++++++++++++++++++++ MAIN CONTENT ++++++++++++++++++++++ -->
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header>
+                <div class="top-header">
+
+                    <div class="header-left">
+                        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+                        <h1>Dashboard</h1>
+                    </div>
+
+                    <div class="header-right">
+
+                        <!-- Notification -->
+                        <div class="notification" id="notification">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="notification-badge" id="notification-badge">0</span>
+                        </div>
+
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notification-dropdown">
+                            <h3>Notifications</h3>
+                            <p>No new notifications</p>
+                        </div>
+
+                        <!-- Profile -->
+                        <div class="profile" id="profile">
+                            <i class="fa-solid fa-user-circle"></i>
+                            <span>Provider</span>
+                            <i class="fa-solid fa-chevron-down down"></i>
+                        </div>
+                        <div class="profile-dropdown" id="profile-dropdown">
+                            <div class="profile-dropdown-header">
+                                <i class="fa-solid fa-user-circle"></i>
+                                <span>Provider</span>
+                            </div>
+
+                            <a href="/html/provider-profile.html">
+                                <i class="fa-solid fa-user"></i>
+                                Profile
+                            </a>
+
+                            <button id="profile-logout-button">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Logout
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </header>
+            <!-- ++++++++++++++++++++++ HERO ++++++++++++++++++++++ -->
+
+            <div class="dashboard-content">
+
+                <div class="welcome-section">
+
+                    <div>
+
+                        <h2>Welcome Back, Provider!</h2>
+
+                        <p>
+                            Here's what's happening with your service bookings today.
+                        </p>
+
+                    </div>
+                    <div class="right-hero-calender">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <p id="current-date"></p>
+
+                        <button id="refresh-provider-bookings">
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ++++++++++++++++++++++ CARDS ++++++++++++++++++++++ -->
+
+                <div class="stats-container">
+
+                    <!-- TOTAL BOOKINGS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                        </div>
+
+                        <div class="card-total">
+
+                            <h3>Total Bookings</h3>
+
+                            <p id="total-bookings">0</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PENDING -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                        </div>
+
+                        <div class="card-total">
+
+                            <h3>Pending Bookings</h3>
+
+                            <p id="pending-bookings">0</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACCEPTED -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        </div>
+
+                        <div class="card-total">
+
+                            <h3>Accepted Bookings</h3>
+
+                            <p id="accepted-bookings">0</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COMPLETED -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-check-double"></i>
+
+                        </div>
+
+                        <div class="card-total">
+
+                            <h3>Completed Bookings</h3>
+
+                            <p id="completed-bookings">0</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ++++++++++++++++++++++ RECENT BOOKINGS ++++++++++++++++++++++ -->
+
+                <div class="recent-bookings">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Recent Bookings</h2>
+
+                        </div>
+
+                        <div>
+
+                            <a href="/html/provider-bookings.html">
+                                View All Bookings
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Customers</th>
+
+                                    <th>Service</th>
+
+                                    <th>Date</th>
+
+                                    <th>Status</th>
+
+                                    <th>Action</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="provider-bookings-body">
+
+                                <!-- Bookings will be added by JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- PROVIDER JAVASCRIPT -->
+    <script src="/js/provider-header.js"></script>
+
+    <script src="/js/provider.js"></script>
+
+
+</body>
+
+</html>

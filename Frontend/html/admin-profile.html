@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Profile - GharAssist</title>
+
+    <link rel="stylesheet" href="/assets/FontAwesom/fontawesome-free-7.3.1-web/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-profile.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="side-logo-container">
+            <img src="/assets/GA-logo.png" alt="GharAssist Logo">
+            <h2>Admin Panel</h2>
+        </div>
+
+        <ul class="side-li">
+
+            <li class="side-a">
+                <a href="/html/admin.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="side-a">
+                <a href="/html/bookings.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Bookings
+                </a>
+            </li>
+
+            <li class="side-a">
+                <a href="/html/admin-customers.html">
+                    <i class="fa-solid fa-user"></i>
+                    Customers
+                </a>
+            </li>
+
+            <li class="side-a">
+                <a href="/html/service-providers.html">
+                    <i class="fa-solid fa-user-gear"></i>
+                    Service Providers
+                </a>
+            </li>
+
+            <li class="side-a">
+                <a href="/html/admin-services.html">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    Services
+                </a>
+            </li>
+
+            <li class="side-a">
+                <a href="#" id="logout-button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header>
+
+            <div class="header-container">
+
+                <div class="dash-left">
+                    <i class="fa-solid fa-bars" id="menu-toggle"></i>
+                    <h1>Admin Profile</h1>
+                </div>
+
+                <div class="dash-right">
+
+                    <!-- Notification -->
+                    <div class="notification" id="notification">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notification-badge" id="notification-badge">0</span>
+                    </div>
+
+                    <!-- Notification Dropdown -->
+                    <div class="notification-dropdown" id="notification-dropdown">
+
+                        <h3>Notifications</h3>
+
+                        <div class="notification-item">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>New booking received</span>
+                        </div>
+
+                        <div class="notification-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>New contact message</span>
+                        </div>
+
+                        <div class="notification-item">
+                            <i class="fa-solid fa-user"></i>
+                            <span>New customer registered</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="profile" id="profile">
+
+                        <i class="fa-solid fa-user-circle"></i>
+
+                        <span>Admin</span>
+
+                        <i class="fa-solid fa-chevron-down down"></i>
+
+                        <!-- Profile Dropdown -->
+                        <div class="profile-dropdown" id="profile-dropdown">
+
+                            <div class="profile-dropdown-item">
+                                <i class="fa-solid fa-user"></i>
+                                <a href="/html/admin-profile.html">Admin Profile</a>
+                            </div>
+
+                            <div class="profile-dropdown-item" id="profile-logout-button">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>Logout</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+        <div class="hero-container">
+
+            <div class="left-hero-text">
+
+                <h1>Admin Profile</h1>
+
+                <p>
+                    View your administrator account information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE CARD -->
+        <section class="profile-section">
+
+            <div class="admin-profile-card">
+
+                <div class="admin-profile-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <h2>Administrator</h2>
+
+                <div class="profile-details">
+
+                    <div class="profile-detail">
+                        <i class="fa-solid fa-user"></i>
+
+                        <div>
+                            <span>Name</span>
+                            <strong id="admin-name">Admin</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="profile-detail">
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <div>
+                            <span>Email</span>
+                            <strong id="admin-email">Loading...</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="profile-detail">
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <div>
+                            <span>Role</span>
+                            <strong id="admin-role">Admin</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <button id="profile-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/admin-header.js"></script>
+    <script src="/js/admin-profile.js"></script>
+
+</body>
+
+</html>

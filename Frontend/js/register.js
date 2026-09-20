@@ -1,8 +1,58 @@
 const myForm = document.querySelector('.ca-form');
 
-myForm.addEventListener('submit', function (e) {
+myForm.addEventListener('submit', async function (e) {
+
     e.preventDefault();
-    classError();
+
+    const isValid = classError();
+
+    if (!isValid) {
+        return;
+    }
+
+    const registerData = {
+        name: document.getElementById("fname").value,
+        email: document.getElementById("femail").value,
+        phone: document.getElementById("fphone").value,
+        password: document.getElementById("fpswd").value,
+        role: document.getElementById("frole").value
+    };
+
+    try {
+
+        const response = await fetch("http://localhost:3000/api/users/register", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(registerData)
+
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.message || "Registration failed");
+            return;
+        }
+
+        alert("Account created successfully!");
+
+        myForm.reset();
+
+        window.location.href = "/html/login.html";
+
+    } catch (error) {
+
+        console.error("Registration Error:", error);
+
+        alert("Unable to connect to server");
+
+    }
+
 })
 const pswdInput = document.getElementById('fpswd')
 const cpswdInput = document.getElementById('fcpswd')
@@ -77,10 +127,10 @@ function classError() {
     }
 
 
-// +++++++++++++++++++++++++++password+++++++++++++++++++++++++++++++++++++++++++
+    // +++++++++++++++++++++++++++password+++++++++++++++++++++++++++++++++++++++++++
     const pswdError = document.getElementById('pswd-error');
     const password = document.getElementById('fpswd').value
-    
+
     const hasNumber = /[0-9]/.test(password)
     const hasLetter = /[A-Za-z]/.test(password)
     const hasSpecial = /[!@#$%^&*]/.test(password)
@@ -116,7 +166,7 @@ function classError() {
     }
 
 
-// ++++++++++++++++confirmpasssword+++++++++++++++++++++++++++++++++
+    // ++++++++++++++++confirmpasssword+++++++++++++++++++++++++++++++++
 
     const cpswdError = document.getElementById('cpswd-error');
     const cpassword = document.getElementById('fcpswd').value
@@ -141,26 +191,26 @@ function classError() {
 // ++++++++++++++++++++++++++eyeicon+++++++++++++++++++++++++++++++++++++++
 const pswdeyeicon = document.getElementById('pswd-eyeIcon')
 const cpswdeyeicon = document.getElementById('cpswd-eyeIcon')
-pswdeyeicon.addEventListener('click', function(){
-    if(pswdInput.type ==='password'){
+pswdeyeicon.addEventListener('click', function () {
+    if (pswdInput.type === 'password') {
         pswdInput.type = 'text';
         pswdeyeicon.classList.replace('fa-eye', 'fa-eye-slash')
 
     }
-    else{
-         pswdInput.type = 'password';
-         pswdeyeicon.classList.replace('fa-eye-slash', 'fa-eye')
+    else {
+        pswdInput.type = 'password';
+        pswdeyeicon.classList.replace('fa-eye-slash', 'fa-eye')
     }
 })
-cpswdeyeicon.addEventListener('click', function(){
-    if(cpswdInput.type ==='password'){
+cpswdeyeicon.addEventListener('click', function () {
+    if (cpswdInput.type === 'password') {
         cpswdInput.type = 'text';
         cpswdeyeicon.classList.replace('fa-eye', 'fa-eye-slash')
 
     }
-    else{
-         cpswdInput.type = 'password';
-         cpswdeyeicon.classList.replace('fa-eye-slash', 'fa-eye')
+    else {
+        cpswdInput.type = 'password';
+        cpswdeyeicon.classList.replace('fa-eye-slash', 'fa-eye')
     }
 })
 
